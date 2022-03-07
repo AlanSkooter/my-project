@@ -1,0 +1,48 @@
+header, main, footer {
+    max-width: 500px;
+    margin: 15px auto;
+}
+
+#addContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#sum {
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    padding: 6px 34px 6px 10px;
+    width: 200px;
+}
+
+#select {
+    background-color: #8bc34a;
+    background-size: 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    max-width: 100%;
+    outline: none;
+    padding: 2px 30px 6px 12px;
+    width: 150px;
+}
+
+#add-btn {
+    height: 34px;
+    width: 34px;
+    background-color: #8bc34a;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}

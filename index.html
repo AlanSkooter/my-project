@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Project Товмасян</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Менеджер контроля расходов</h1>
+    </header>
+    <main>
+      <div id = "addContainer">
+          <input type = "text" placeholder = "Введите сумму" id = "sum">
+          <select id = "select">
+            <option value = "income">Доход</option>
+            <option value = "outgo">Расход</option>
+          </select>
+          <input type="button" id = "add-btn" value="+">
+      </div>
+      <hr id = "line">
+      <div id = "container"></div>
+      <hr>
+    </main>
+    <footer>
+      <div id = "balance"></div>
+      <div id = "consumption"></div>
+    </footer>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
