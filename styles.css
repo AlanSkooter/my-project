@@ -1,6 +1,53 @@
+body {
+    background-image: url(images/bg-desktop-light.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #ecebff;
+}
+
+h1 {
+    font-family: Bradley Hand, cursive;
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 200px;
+}
+
+main {
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 15px 15px 0px 15px;
+}
+
+footer {
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 0px 15px 15px 15px;
+}
+
 header, main, footer {
     max-width: 500px;
-    margin: 15px auto;
+    margin: 0px auto;
+}
+
+p {
+    font-family: Bradley Hand, cursive;
+}
+
+hr {
+    background: linear-gradient(to right, #a174e9, #6a9af2);
+    height: 2px;
+}
+
+#warning {
+    font-family: Bradley Hand, cursive;
+    color: red;
 }
 
 #addContainer {
@@ -10,27 +57,21 @@ header, main, footer {
 }
 
 #sum {
-    outline: none;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+    font-family: Bradley Hand, cursive;
     border-radius: 4px;
-    border: 1px solid #e0e0e0;
+    border: 2px solid #e0e0e0;
     padding: 6px 34px 6px 10px;
     width: 200px;
 }
 
 #select {
-    background-color: #8bc34a;
+    background-color: #6564dc;
     background-size: 10px;
     border: none;
     border-radius: 4px;
-    color: #fff;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+    color: white;
+    font-family: Bradley Hand, cursive;
     max-width: 100%;
-    outline: none;
     padding: 2px 30px 6px 12px;
     width: 150px;
 }
@@ -38,11 +79,86 @@ header, main, footer {
 #add-btn {
     height: 34px;
     width: 34px;
-    background-color: #8bc34a;
+    background-color: #6a9af2;
     border: none;
     border-radius: 4px;
-    color: #fff;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+    color: white;
+    font-family: Bradley Hand, cursive;
+}
+
+#del-btn {
+    display: none;
+    height: 34px;
+    width: 34px;
+    background-color: #6a9af2;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: Bradley Hand, cursive;
+}
+
+.sumvalue {
+    font-family: Bradley Hand, cursive;
+    margin-left: 10px;
+}
+
+.custom-checkbox {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    user-select: none;
+    cursor: pointer;
+    padding: 0 1em 0 1.4em;
+    min-height: 1em;
+}
+  
+.custom-checkbox .checker {
+    position: absolute;
+    margin-top: 0;
+    margin-left: -1.2em;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1;
+    border: 1px solid #a174e9;
+    border-radius: 3px;
+    background-color: white;
+    color: transparent;
+}
+
+.custom-checkbox .checker:after {
+    content: '✖';
+}
+
+.custom-checkbox input[type='checkbox'] {
+    position: absolute;
+    right: 100%;
+    top: 0;
+}
+
+.custom-checkbox input[type='checkbox']:checked + .checker {
+    background-color: #a174e9;
+    color: white;
+}
+
+.custom-checkbox input[type='checkbox']:focus + .checker {
+    box-shadow: 0 0 5px 0 #a174e9;
+}
+  
+.custom-checkbox input[type='checkbox']:disabled+.checker {
+    background-color: #999;
+    border-color: #999;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
