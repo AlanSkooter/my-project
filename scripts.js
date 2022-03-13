@@ -45,26 +45,15 @@ button.onclick = () => {
     warning.innerHTML = '';
     const sumDiv = document.createElement('div');
     container.prepend(sumDiv);
-      if (selectValue === 'income') {
-        let addSum = {
-          select: selectValue,
-          value: sumValue.toFixed(2)
-        }
-        let array = JSON.parse(localStorage.getItem('addSum')||'[]');
-        array.push(addSum);
-        localStorage.setItem('addSum', JSON.stringify(array));
-        location.reload();
+      let addSum = {
+        select: selectValue,
+        value: sumValue.toFixed(2)
       }
-      else if (selectValue === 'outgo') {
-        let addSum = {
-          select: selectValue,
-          value: sumValue.toFixed(2)
-        }
-        let array = JSON.parse(localStorage.getItem('addSum')||'[]');
-        array.push(addSum);
-        localStorage.setItem('addSum', JSON.stringify(array));
-        location.reload();
-      }
+      let array = JSON.parse(localStorage.getItem('addSum')||'[]');
+      array.push(addSum);
+      localStorage.setItem('addSum', JSON.stringify(array));
+      location.reload();
+
   } else {
     warning.innerHTML = `<p id = "warning"> Введите сумму! </p>`; 
   }
@@ -80,15 +69,15 @@ const reloaded  = () => {
       line2.style.display = "none";
     }
     arraySumAll.forEach((elem, index) => {
+      let checkSelect;
     if (elem.select === 'income') {
-      const sumDiv = document.createElement('div');
-      container.prepend(sumDiv);
-      sumDiv.innerHTML = `<label class = "custom-checkbox"> <input type = "checkbox" class = "visually-hidden" id = "${index}" onchange = "delBtn();" > <span class="checker"></span>  <span class="sumvalue"> + ${elem.value} </span></label>`;
+      checkSelect = '+';
     } else if (elem.select === 'outgo') {
-      const sumDiv = document.createElement('div');
-      container.prepend(sumDiv);
-      sumDiv.innerHTML = `<label class = "custom-checkbox"> <input type = "checkbox" class = "visually-hidden" id = "${index}" onchange = "delBtn();" > <span class="checker"></span>  <span class="sumvalue"> − ${elem.value} </span></label>`;
+      checkSelect = '-';
     }
+    const sumDiv = document.createElement('div');
+    container.prepend(sumDiv);
+    sumDiv.innerHTML = `<label class = "custom-checkbox"> <input type = "checkbox" class = "visually-hidden" id = "${index}" onchange = "delBtn();" > <span class="checker"></span>  <span class="sumvalue"> ${checkSelect} ${elem.value} </span></label>`;
   });
   let countBalance = JSON.parse(localStorage.getItem('balance'));
   let countConsumption = JSON.parse(localStorage.getItem('consumption'));
